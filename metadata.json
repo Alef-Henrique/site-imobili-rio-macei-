@@ -1,0 +1,6 @@
+{
+  "name": "Maceió Imóveis Premium",
+  "description": "Imobiliária de alto padrão em Maceió, oferecendo casas luxuosas e apartamentos modernos com foco em sofisticação e confiança.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

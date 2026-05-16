@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+button {
+  cursor: pointer;
+}
+
+@theme {
+  --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  --color-ice: #f8fafc; /* slate-50 */
+  --color-premium-blue: #0284c7; /* sky-600 */
+  --color-luxury-gray: #0f172a; /* slate-900 */
+  --color-soft-blue: #f0f9ff;
+  
+  --shadow-premium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-sky: 0 10px 15px -3px rgba(2, 132, 199, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .italic-serif {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border-b border-slate-200/50;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/50 shadow-xl;
+  }
+
+  .btn-premium {
+    @apply px-6 py-2.5 bg-gradient-to-r from-sky-600 to-sky-700 text-white rounded-full 
+           text-xs font-bold uppercase tracking-widest shadow-lg shadow-sky-200 
+           transition-all duration-300 hover:shadow-sky-300 hover:-translate-y-0.5
+           active:translate-y-0;
+  }
+
+  .btn-dark {
+    @apply px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold 
+           shadow-xl hover:bg-slate-800 transition-all duration-300;
+  }
+  
+  .gradient-brand {
+    @apply bg-gradient-to-tr from-sky-600 to-indigo-900;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2.5s infinite linear;
+  }
+
+  .glow-sky {
+    box-shadow: 0 0 20px rgba(2, 132, 199, 0.3);
+  }
+
+  /* Custom Premium Scrollbar */
+  .premium-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .premium-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .premium-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgba(14, 165, 233, 0.4), rgba(14, 165, 233, 0.2));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .premium-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(14, 165, 233, 0.6);
+  }
+
+  .glass-dropdown {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.02) !important;
+  }
+}
+
